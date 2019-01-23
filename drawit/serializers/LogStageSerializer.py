@@ -20,6 +20,12 @@ class LogStageUpdateSerializer(serializers.ModelSerializer):
 
         if instance.types == 'success':
             instance.success_count += 1
+        elif instance.types == 'star0':
+            instance.star0_count += 1
+        elif instance.types == 'star1':
+            instance.star1_count += 1
+        elif instance.types == 'star2':
+            instance.star2_count += 1
 
         instance.try_count += 1
         instance.save()
@@ -28,7 +34,7 @@ class LogStageUpdateSerializer(serializers.ModelSerializer):
 class LogStageInfoSerializer(serializers.ModelSerializer):
     class Meta:
         model = LogStage
-        fields = ('stage_id', 'try_count', 'success_count')
+        fields = ('stage_id', 'try_count', 'success_count', 'star0_count', 'star1_count', 'star2_count')
 
     def create(self, validated_data):
         return LogStage.objects.create(**validated_data)

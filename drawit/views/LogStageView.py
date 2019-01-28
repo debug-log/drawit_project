@@ -2,14 +2,14 @@ from drawit.models import *
 from drawit.serializers import *
 from rest_framework import generics
 
-class LogStageCreate(generics.ListCreateAPIView):
+class LogStageCreateView(generics.ListCreateAPIView):
     queryset = LogStage.objects.all()
     serializer_class = LogStageCreateSerializer
 
-class LogStageUpdate(generics.RetrieveUpdateDestroyAPIView):
+class LogStageUpdateView(generics.RetrieveUpdateDestroyAPIView):
     queryset = LogStage.objects.all()
     serializer_class = LogStageUpdateSerializer
 
-class LogStageInfoList(generics.ListAPIView):
+class LogStageInfoListView(generics.ListAPIView):
     queryset = LogStage.objects.all()
     serializer_class = LogStageInfoSerializer

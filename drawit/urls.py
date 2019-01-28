@@ -9,6 +9,7 @@ urlpatterns = [
     url(r'^user/$', UserCreateView.as_view()),
     url(r'^bestrecord/(?P<stage_id>[0-9]+)/$', BestRecordCreateView.as_view()),
     url(r'^bestrecord/(?P<stage_id>[0-9]+)/(?P<user_id>.+)/$', BestRecordUpdateView.as_view()),
+    url(r'^myrank/(?P<stage_id>[0-9]+)/(?P<user_id>.+)/$', MyRank.view),
 ]
 
 urlpatterns = format_suffix_patterns(urlpatterns)
